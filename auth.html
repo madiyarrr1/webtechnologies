@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register / My Account</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleindex.css">
+    <link rel="stylesheet" href="buttoncss.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Real Estate</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                    <div>
+                        <i class="bi bi-person-fill text-light fs-4 ms-3" id="userIcon" style="cursor: pointer; margin-left: auto !important;"></i>
+                    </div>
+                    <ul class="navbar-nav d-flex align-items-center mb-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="buy.html">Buy</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                        <li class="nav-item"><button id="faqBtn" class="nav-link btn btn-link text-light">FAQ</button></li>
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center justify-content-end mt-2 mt-lg-0">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="theme-toggle">
+                        <label class="form-check-label text-light" for="theme-toggle">Light/Dark</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-light py-5 text-center">
+        <div class="container">
+            <h2>Here is your account!</h2>
+            <h3 id="currentDateTime" class="mt-3 fs-5"></h3>
+        </div>
+    </header>
+    
+    <div class="container mt-5">
+        <h2 id="formTitle">Login</h2>
+        
+        <form id="loginForm" class="auth-form">
+            <div class="mb-3">
+                <label for="loginUsername" class="form-label">Username</label>
+                <input type="text" class="form-control" id="loginUsername" required>
+            </div>
+            <div class="mb-3">
+                <label for="loginPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="loginPassword" required>
+            </div>
+            <button type="submit" class="button-86">Login</button>
+            <p class="mt-3">Don't have an account? <a href="javascript:void(0);" id="showRegister">Register here</a></p>
+        </form>
+
+        <form id="registerForm" class="auth-form" style="display: none;">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" required>
+            </div>
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" required>
+            </div>
+            <button type="submit" class="button-86">Register</button>
+            <p class="mt-3">Already have an account? <a href="javascript:void(0);" id="showLogin">Log in here</a></p>
+        </form>
+    </div>
+
+    <div id="accountSection" class="container mt-5" style="display: none;">
+        <h1>Welcome to your account, <span id="usernameDisplay"></span>!</h1>
+        <p>Your registered email is: <span id="userEmail"></span></p>
+        <button id="logoutButton" class="btn btn-outline-danger">Log Out</button>
+    </div>
+
+
+    <div id="faqPopup" class="popup">
+        <div class="popup-content">
+            <span id="closeFaq"></span>
+            <h2>Frequently Asked Questions</h2>
+            <ul>
+                <li><strong>Question 1:</strong> What properties do you offer?</li>
+                <li><strong>Answer:</strong> We offer a wide range of residential and commercial properties.</li>
+                <li><strong>Question 2:</strong> How can I schedule a viewing?</li>
+                <li><strong>Answer:</strong> You can contact us through the form above to schedule a viewing.</li>
+                <li><strong>Question 3:</strong> What are the fees associated with buying a property?</li>
+                <li><strong>Answer:</strong> Fees vary based on property type and location; please contact us for more details.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="scriptlogin.js"></script>
+    <script src="scriptindex.js"></script>
+</body>
+</html>
